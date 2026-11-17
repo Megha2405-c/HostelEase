@@ -1,5 +1,5 @@
 import React,{useEffect,useState}from'react';import{Building2,Home,ClipboardList,PlusCircle,Bell,Users,LogOut,Menu,X,ShieldCheck,Sparkles,Send,ChevronRight,RefreshCw,AlertTriangle,CheckCircle2,Clock3,MessageCircle,Star}from'lucide-react';
-const API=import.meta.env.VITE_API_URL||'http://localhost:5000/api';
+const API=import.meta.env.VITE_API_URL||'https://hostelease-im4q.onrender.com/api';
 async function api(path,token,options={}){const r=await fetch(API+path,{...options,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...(options.headers||{})}});const d=await r.json().catch(()=>({message:'Server did not return JSON'}));if(!r.ok)throw Error(d.message||'Request failed');return d}
 const statusClass=s=>(s||'').toLowerCase().replaceAll(' ','-');
 function App() {
